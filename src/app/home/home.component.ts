@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     {name: 'Botafogo', short: 'bot', logo: 'botafogo.png'},
     {name: 'Atlético Mineiro', short: 'cam', logo: 'atletico-mineiro.png'},
     {name: 'Ceará', short: 'cea', logo: 'ceara.png'},
-    {name: 'Vasco', short: 'vasc', logo: 'vasco.png'},
+    {name: 'Vasco', short: 'vas', logo: 'vasco.png'},
   ];
 
   teamsDisplay:any = [
