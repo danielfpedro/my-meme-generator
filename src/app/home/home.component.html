@@ -1,0 +1,143 @@
+<div class="container-master">
+	<div class="box">
+		<div class="my-row">
+		  <div class="my-col">
+			<div id="canvas" class="canvas" [ngStyle]="{'background-image': getImagePath()}" [style.background-position]="image.position" >
+				<div class="overlay"[style.opacity]="overlayOpacity" ></div>
+				<div class="container-text">
+					<div class="wrap">
+						<div class="result" *ngIf="hasScore">
+							<span class="team-name">{{teamsDisplay[0].team.short}}</span>
+							<span class="team-logo"><img src="src/assets/img/logos/{{teamsDisplay[0].team.logo}}" width="40"></span>
+							<span class="match-score">{{teamsDisplay[0].score}}</span>
+
+							<span class="versus">x</span>
+
+							<span class="match-score">{{teamsDisplay[1].score}}</span>
+							<span class="team-logo"><img src="src/assets/img/logos/{{teamsDisplay[1].team.logo}}" width="40"></span>
+							<span class="team-name">{{teamsDisplay[1].team.short}}</span>
+						</div>
+						<h2>{{title}}</h2>
+						<p>{{body}}</p>
+					</div>
+				</div>
+			</div>
+		  </div>
+		</div>
+
+<br>
+<br>
+<mat-divider></mat-divider>
+<br>
+<br>
+
+		<div class="my-row">
+		  <div class="my-col">
+				<mat-form-field>
+	    			<input matInput placeholder="URL Imagem de Fundo" [(ngModel)]="image.url">
+	  		</mat-form-field>
+
+  			<div class="mat-caption">Escurecer Imagem de Fundo</div>
+			<mat-slider [(ngModel)]="overlayOpacity" min="0" max="0.5" step="0.1" thumbLabel></mat-slider>
+
+			  <mat-form-field>
+			    <mat-select placeholder="Posição Imagem de Fundo" [(ngModel)]="image.position">
+			      <mat-option *ngFor="let option of imagePositionOptions" [value]="option.value">{{option.label}}</mat-option>
+			    </mat-select>
+			  </mat-form-field>
+				
+					<mat-form-field>
+		    		<input matInput placeholder="Título" [(ngModel)]="title">
+		  		</mat-form-field>
+
+					<mat-form-field>
+		    		<textarea matInput placeholder="Texto" [(ngModel)]="body"></textarea>
+		  		</mat-form-field>
+		</div>		
+		  	  <div class="my-col" style="width: 400px;">
+      			<mat-checkbox [(ngModel)]="hasScore">Adicionar Placar?</mat-checkbox>
+    			
+
+    			<section [hidden]="!hasScore">
+    				<br>
+							<section *ngFor="let teamDisplay of teamsDisplay">
+								<mat-form-field>
+									<mat-select placeholder="Time" [(ngModel)]="teamDisplay.team">
+										<mat-option *ngFor="let team of teams" [value]="team">{{team.name}}</mat-option>
+									</mat-select>
+					  		</mat-form-field>
+								<mat-form-field>
+					    		<input matInput placeholder="Gols" [(ngModel)]="teamDisplay.score">
+				  			</mat-form-field>
+				  			<br>
+				  			<br>
+				  		</section>
+					</section>
+				</div>
+		</div>
+
+	<div class="my-row">
+		<div class="my-col">
+			<button type="button" mat-raised-button (click)="gerar()" color="primary">Gerar Meme</button>
+		</div>
+	</div>
+	<div id="meme-result">
+	</div>
+	<!-- <div class="row">
+		<div>
+
+		</div>
+		<div class="col-controls">
+			<div>
+				<mat-form-field>
+	    			<input matInput placeholder="URL Imagem de Fundo" [(ngModel)]="image.url">
+	  			</mat-form-field>
+			</div>
+			<div>
+				<p>Escurecer Imagem de Fundo</p>
+				<mat-slider [(ngModel)]="overlayOpacity" min="0" max="0.5" step="0.1" thumbLabel ></mat-slider>
+			</div>
+			<div>
+			  <mat-form-field>
+			    <mat-select placeholder="Posição Imagem de Fundo" [(ngModel)]="image.position">
+			      <mat-option *ngFor="let option of imagePositionOptions" [value]="option.value">{{option.label}}</mat-option>
+			    </mat-select>
+			  </mat-form-field>
+			</div>
+			<div>
+				<mat-form-field>
+	    			<input matInput placeholder="Título" [(ngModel)]="title">
+	  			</mat-form-field>
+			</div>
+			<div>
+				<mat-form-field>
+	    			<textarea matInput placeholder="Texto" [(ngModel)]="body"></textarea>
+	  			</mat-form-field>
+			</div>
+			<div>
+				<label>Time A</label>
+				<select [(ngModel)]="teama.team">
+					<option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+				</select>
+			</div>
+			<div>
+				<label>Time A Gols</label>
+				<input type="text" [(ngModel)]="teama.gols">
+			</div>
+			<div>
+				<label>Time B</label>
+				<select [(ngModel)]="teamb.team">
+					<option *ngFor="let team of teams" [ngValue]="team">{{team.name}}</option>
+				</select>
+			</div>
+			<div>
+				<label>Time B Gols</label>
+				<input type="text" [(ngModel)]="teamb.gols">
+			</div>
+			<div>
+				<button type="button" (click)="gerar()">Gerar</button>
+				<a [href]="base64" download="meme.jpg">Download</a>
+			</div>
+		</div> -->
+	<!-- </div> -->
+</div>

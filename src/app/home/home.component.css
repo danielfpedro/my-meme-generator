@@ -1,0 +1,116 @@
+.row {
+	display: flex;
+	flex-direction: row;
+}
+.canvas {
+	width: 650px;
+	height: 350px;
+	background: #EEE;
+	
+	position: relative;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	background-position: bottom right;
+}
+
+.overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	background-color: #000;
+	z-index: 1	;
+}
+.container-text {
+	position: absolute;
+	width: 100%;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 2;
+	color: #FFF;
+	text-shadow: 1px 1px #000;
+	font-family: 'Roboto', sans-serif;
+}
+.container-text > .wrap {
+	padding: 15px;
+}
+.container-text h2 {
+	font-size: 40px;
+	margin: 0;
+	margin-bottom: 5px;
+	padding: 0;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.container-text p {
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+}
+
+.match-score-a, .team-name, .versus {
+	/*display: inline-block;
+  vertical-align: middle;
+  line-height: normal;*/
+}
+.match-score {
+	font-size: 45px;
+	font-weight: bold;
+	padding: 0 5px;
+}
+.team-name {
+	text-transform: uppercase;
+	font-size: 15px;
+}
+.team-logo {
+	padding: 0 12px;
+}
+.versus {
+	font-size: 24px;
+}
+
+.result {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+mat-form-field, mat-slider {
+	width: 100%;
+}
+
+.tile-controls {
+
+	/*background-color: red;
+	width: 100%;	*/
+}
+
+.container-master {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.box {
+   width: 100%;
+   max-width: 950px;
+   margin: 5px;
+}
+
+.my-row {
+	display: flex;
+	flex-direction: row;
+	align-content: flex-start;
+}
+.my-col {
+	margin-right: 30px;
+}
+.my-col:last-child {
+	margin-right: 0px;
+}
